@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Love Quest - Lara & Keven</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Press Start 2P', cursive;
+background:linear-gradient(
+180deg,
+#050816 0%,
+#0b1020 40%,
+#1c1240 100%
+);
+color:white;
+overflow:hidden;
+}
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background-image:
+radial-gradient(white 1px, transparent 1px);
+background-size:40px 40px;
+opacity:.25;
+z-index:-1;
+animation:starsMove 60s linear infinite;
+}
+
+@keyframes starsMove{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-400px);
+}
+}
+
+.screen{
+display:none;
+min-height:100vh;
+width:100%;
+padding:50px 30px 120px;
+text-align:center;
+}
+
+.screen.active{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+h1{
+font-size:3rem;
+color:#ff7cf7;
+text-shadow:
+0 0 10px #ff7cf7,
+0 0 30px #ff7cf7;
+margin-bottom:30px;
+}
+
+h2{
+margin-bottom:20px;
+color:#ffe27a;
+}
+
+p{
+max-width:700px;
+line-height:2;
+margin-bottom:25px;
+}
+
+.btn{
+background:linear-gradient(45deg,#ff6bff,#ff94f3);
+color:white;
+border:none;
+padding:20px 40px;
+font-family:'Press Start 2P', cursive;
+cursor:pointer;
+border-radius:10px;
+margin-top:20px;
+box-shadow:
+0 0 10px #ff6bff,
+0 0 25px #ff6bff;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin:30px auto;
+}
+
+
+.photo{
+width:260px;
+height:auto;
+border-radius:20px;
+display:block;
+box-shadow:0 0 20px rgba(255,105,180,.25);
+transition:.3s;
+}
+
+.photo-main{
+width:90%;
+max-width:550px;
+height:auto;
+border-radius:25px;
+display:block;
+margin:20px auto;
+box-shadow:0 0 30px rgba(255,105,180,.35);
+}
+
+.photo:hover{
+transform:scale(1.02);
+}
+
+.video{
+width:90%;
+max-width:700px;
+border-radius:15px;
+margin-top:20px;
+}
+
+.achievement{
+margin-top:20px;
+padding:15px;
+border:2px solid gold;
+color:gold;
+}
+
+.counter{
+color:#ffe27a;
+margin-bottom:30px;
+line-height:2;
+}
+
+.music-btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 25px;
+border:2px solid #ff6bff;
+border-radius:10px;
+text-decoration:none;
+color:white;
+}
+
+.music-btn:hover{
+background:#ff6bff;
+}
+
+.final-letter{
+max-width:800px;
+line-height:2;
+text-align:left;
+font-size:12px;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:2rem;
+}
+
+body{
+font-size:10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- TELA INICIAL -->
+
+<section class="screen active" id="screen0">
+
+<h1>LOVE QUEST</h1>
+
+<p>
+Player 1: Lara ❤️
+<br><br>
+Player 2: Keven 🎮
+<br><br>
+Campaign Started:
+23/10/2022
+</p>
+
+<div class="counter">
+❤️ SAVE FILE ACTIVE ❤️
+<br><br>
+Desde 23/10/2022
+</div>
+
+<button class="btn" onclick="nextScreen(1)">
+PRESS START
+</button>
+
+
+
+</section>
+<!-- CHAPTER 1 -->
+
+<section class="screen" id="screen1">
+
+<h2>CHAPTER 1</h2>
+
+<h2>🏖️ Beach Adventure</h2>
+
+<div class="gallery">
+
+<img src="assets/praia1.jpg" class="photo">
+<img src="assets/praia2.jpg" class="photo">
+
+</div>
+
+<p>
+Dois jogadores iniciaram uma aventura sem imaginar
+o quanto suas vidas mudariam.
+</p>
+
+<button class="btn" onclick="nextScreen(2)">
+NEXT →
+</button>
+
+</section>
+
+
+<!-- CHAPTER 2 -->
+
+<section class="screen" id="screen2">
+
+<h2>CHAPTER 2</h2>
+
+<h2>❤️ First I Love You</h2>
+
+<video class="video" controls>
+<source src="assets/eu-te-amo.mp4" type="video/mp4">
+</video>
+
+<div class="achievement">
+🏆 ACHIEVEMENT UNLOCKED
+<br><br>
+FEELINGS.EXE
+</div>
+
+<button class="btn" onclick="nextScreen(3)">
+NEXT →
+</button>
+
+</section>
+
+
+<!-- CHAPTER 3 -->
+
+<section class="screen" id="screen3">
+
+<h2>CHAPTER 3</h2>
+
+<h2>🌹 Flowers</h2>
+
+<img src="assets/flores.jpg" class="photo">
+
+<p>
+Nem sempre são os grandes acontecimentos
+que ficam para sempre na memória.
+
+Às vezes,
+são os pequenos gestos
+que fazem a gente se sentir amado. Obrigada, por cada gesto lindo.
+</p>
+
+<button class="btn" onclick="nextScreen(4)">
+NEXT →
+</button>
+
+</section>
+
+
+<!-- CHAPTER 4 -->
+
+<section class="screen" id="screen4">
+
+<h2>CHAPTER 4</h2>
+
+<h2>🎂 First Anniversary</h2>
+
+<img src="assets/aniversario.jpg" class="photo">
+
+<p>
+Mais um ano concluído.
+A campanha continuava ficando cada vez melhor.
+</p>
+
+<div class="achievement">
+🏆 ACHIEVEMENT UNLOCKED
+<br><br>
+YEAR ONE COMPLETED
+</div>
+
+<button class="btn" onclick="nextScreen(5)">
+NEXT →
+</button>
+
+</section>
+
+<!-- CHAPTER 5 -->
+
+<section class="screen" id="screen5">
+
+<h2>CHAPTER 5</h2>
+
+<h2>🚗 First Car</h2>
+
+<div class="gallery">
+
+<img src="assets/carro1.jpg" class="photo">
+<img src="assets/carro2.jpg" class="photo">
+
+</div>
+
+<p>
+Entre quilômetros percorridos e músicas cantadas no caminho,
+novas aventuras começaram a surgir.
+</p>
+
+<div class="achievement">
+🏆 ACHIEVEMENT UNLOCKED
+<br><br>
+NEW VEHICLE ACQUIRED
+</div>
+
+<button class="btn" onclick="nextScreen(6)">
+NEXT →
+</button>
+
+</section>
+
+
+<!-- CHAPTER 6 -->
+
+<section class="screen" id="screen6">
+
+<h2>CHAPTER 6</h2>
+
+<h2>💍 Engagement Arc</h2>
+
+<img src="assets/noivado1.jpg" class="photo-main">
+
+<div class="gallery">
+    <img src="assets/noivado2.jpg" class="photo">
+    <img src="assets/noivado3.jpg" class="photo">
+</div>
+
+<p>
+03/01/2025
+<br><br>
+Uma nova missão foi aceita.
+Não apenas continuar a jornada,
+mas construir uma vida inteira juntos.
+</p>
+
+<div class="achievement">
+🏆 LEGENDARY ACHIEVEMENT
+<br><br>
+FIANCÉ UNLOCKED
+</div>
+
+<button class="btn" onclick="nextScreen(7)">
+NEXT →
+</button>
+
+</section>
+
+
+<!-- CHAPTER 7 -->
+
+<section class="screen" id="screen7">
+
+<h2>CHAPTER 7</h2>
+
+<h2>🏠 Home DLC</h2>
+
+<img src="assets/casa1.jpg" class="photo-main">
+
+<div class="gallery">
+    <img src="assets/natal1.jpg" class="photo">
+    <img src="assets/natal2.jpg" class="photo">
+</div>
+
+
+<p>
+29/11/2025
+<br><br>
+Depois de tantos sonhos compartilhados,
+chegou o momento de construir um lar.
+
+Não uma casa.
+
+Um lar.
+
+O nosso lar.
+</p>
+
+<div class="achievement">
+🏆 ACHIEVEMENT UNLOCKED
+<br><br>
+HOME SWEET HOME
+</div>
+
+<button class="btn" onclick="nextScreen(8)">
+NEXT →
+</button>
+
+</section>
+<!-- CHAPTER 8 -->
+
+<section class="screen" id="screen8">
+
+<h2>FINAL CHAPTER</h2>
+
+<h2>❤️ The Best Save File</h2>
+
+<img src="assets/especial.jpg" class="photo">
+
+<div class="final-letter">
+
+<p>
+Keven,
+</p>
+
+<p>
+Se alguém me contasse lá atrás tudo o que viveríamos juntos,
+eu provavelmente acharia impossível.
+</p>
+
+<p>
+A praia, as flores, os quilômetros percorridos,
+o pedido de noivado,
+a nossa casa,
+os Natais compartilhados,
+e todos os momentos que não cabem em fotografias.
+</p>
+
+<p>
+Você se tornou meu lugar seguro,
+meu melhor amigo,
+meu companheiro de aventuras
+e a pessoa com quem eu quero continuar jogando todos os dias.
+</p>
+
+<p>
+Obrigado por cada fase vencida,
+cada desafio superado
+e cada sonho construído ao meu lado.
+</p>
+
+<p>
+Se essa história fosse um jogo,
+você seria a minha melhor escolha.
+</p>
+
+<p>
+E a melhor parte?
+</p>
+
+<p>
+Ainda estamos no começo.
+</p>
+
+<p>
+Com amor,
+<br><br>
+Lara ❤️
+
+<p>
+P.S:
+Se eu pudesse começar tudo novamente,
+eu escolheria você outra vez.
+
+</p>
+
+</div>
+
+<div class="achievement">
+🏆 GAME COMPLETED
+<br><br>
+100%
+</div>
+
+<a
+class="music-btn"
+target="_blank"
+href="https://open.spotify.com/playlist/4tknwR7cm35PUHX3ZeMJ3Y?si=394dc6d95e4d42b1&pt=43f70aa4e5658095d3bc70d20faee120">
+🎵 Nossa Trilha Sonora
+</a>
+
+<br><br>
+
+<div class="achievement">
+✨ EXPANSION PACK UNLOCKED
+<br><br>
+THE REST OF OUR LIVES
+</div>
+
+</section>
+
+<script>
+
+function nextScreen(nextId){
+
+const screens =
+document.querySelectorAll(".screen");
+
+screens.forEach(screen=>{
+screen.classList.remove("active");
+});
+
+document
+.getElementById("screen"+nextId)
+.classList.add("active");
+
+window.scrollTo(0,0);
+
+}
+
+</script>
+
+<div id="secretMessage" style="display:none;">
+❤️ Eu escolheria você em todas as vidas.
+</div>
+
+</body>
+</html>
