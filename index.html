@@ -1,1 +1,101 @@
-<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Love Quest Novo</title></head><body><h1>Arquivo gerado</h1><p>Substitua pelo conteúdo completo fornecido anteriormente.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Quest Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Press Start 2P',cursive;background:linear-gradient(180deg,#050816,#0b1020,#1c1240);color:#fff;overflow:hidden}
+.stars{position:fixed;inset:0;z-index:-1;background-image:radial-gradient(white 1px,transparent 1px);background-size:40px 40px;opacity:.25}
+.screen{display:none;height:100vh;padding:30px;overflow-y:auto;text-align:center}
+.screen.active{display:flex;flex-direction:column;justify-content:center;align-items:center}
+h1{font-size:3rem;color:#ff7cf7;margin-bottom:25px;text-shadow:0 0 20px #ff7cf7}
+h2{color:#ffe27a;margin-bottom:20px}
+p{max-width:800px;line-height:2;margin:20px auto}
+.btn{background:linear-gradient(45deg,#ff6bff,#ff94f3);border:none;color:#fff;padding:18px 35px;border-radius:12px;font-family:'Press Start 2P',cursive;cursor:pointer;box-shadow:0 0 20px #ff6bff}
+.achievement{margin-top:20px;padding:15px;border:2px solid gold;color:gold;border-radius:12px}
+.gallery{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;margin:20px auto}
+.photo{width:100%;max-width:420px;height:320px;object-fit:contain;background:rgba(255,255,255,.03);border-radius:20px;padding:10px;box-shadow:0 0 20px rgba(255,105,180,.20)}
+.photo-main{width:100%;max-width:600px;max-height:500px;object-fit:contain;display:block;margin:20px auto;border-radius:25px;box-shadow:0 0 35px rgba(255,105,180,.40)}
+.photo-final{width:100%;max-width:350px;max-height:450px;object-fit:contain;display:block;margin:20px auto;border-radius:25px;box-shadow:0 0 35px rgba(255,105,180,.40)}
+.music-btn{display:inline-block;margin-top:20px;padding:15px 25px;border:2px solid #ff7cf7;color:#fff;text-decoration:none;border-radius:10px}
+.final-letter{max-width:700px;text-align:left;font-size:13px;line-height:2.2}
+@media(max-width:768px){.gallery{flex-direction:column}.photo{height:auto}h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<section class="screen active" id="screen0">
+<h1>LOVE QUEST ❤️</h1>
+<div class="achievement">❤️ SAVE FILE ACTIVE ❤️<br><br>23/10/2022</div>
+<p>Player 1: Lara ❤️<br><br>Player 2: Keven 🎮</p>
+<button class="btn" onclick="nextScreen(1)">PRESS START</button>
+<a class="music-btn" target="_blank" href="https://open.spotify.com/">🎵 Start Our Soundtrack</a>
+</section>
+
+<section class="screen" id="screen1">
+<h2>CHAPTER 1</h2><h2>🏖️ The Beginning</h2>
+<div class="gallery"><img src="assets/praia1.jpg" class="photo"><img src="assets/praia2.jpg" class="photo"></div>
+<p>Two paths crossed without knowing how much they would change each other.</p>
+<button class="btn" onclick="nextScreen(2)">CONTINUE QUEST →</button>
+</section>
+
+<section class="screen" id="screen2">
+<h2>CHAPTER 2</h2><h2>🎂 A Birthday I'll Never Forget</h2>
+<img src="assets/aniversario.jpg" class="photo-main">
+<p>You transformed my birthday into one of the happiest memories of my life.</p>
+<button class="btn" onclick="nextScreen(3)">CONTINUE QUEST →</button>
+</section>
+
+<section class="screen" id="screen3">
+<h2>CHAPTER 3</h2><h2>❤️ First I Love You</h2>
+<video class="photo-main" controls><source src="assets/eu-te-amo.mp4" type="video/mp4"></video>
+<p>Some moments last forever.</p>
+<button class="btn" onclick="nextScreen(4)">CONTINUE QUEST →</button>
+</section>
+
+<section class="screen" id="screen4">
+<h2>CHAPTER 4</h2><h2>🚗 First Achievement Unlocked</h2>
+<div class="gallery"><img src="assets/carro1.jpg" class="photo"><img src="assets/carro2.jpg" class="photo"></div>
+<div class="achievement">🏆 FIRST BIG DREAM</div>
+<button class="btn" onclick="nextScreen(5)">CONTINUE QUEST →</button>
+</section>
+
+<section class="screen" id="screen5">
+<h2>CHAPTER 5</h2><h2>💍 God's Promise</h2>
+<img src="assets/noivado1.jpg" class="photo-main">
+<div class="achievement">✨ GOD'S PLAN UNLOCKED ✨</div>
+<button class="btn" onclick="nextScreen(6)">CONTINUE QUEST →</button>
+</section>
+
+<section class="screen" id="screen6">
+<h2>CHAPTER 6</h2><h2>🏠 Home DLC</h2>
+<img src="assets/casa1.jpg" class="photo-main">
+<div class="gallery"><img src="assets/natal1.jpg" class="photo"><img src="assets/natal2.jpg" class="photo"></div>
+<div class="achievement">🏠 HOME ACHIEVEMENT UNLOCKED</div>
+<button class="btn" onclick="nextScreen(7)">CONTINUE QUEST →</button>
+</section>
+
+<section class="screen" id="screen7">
+<h2>MISSION ACCOMPLISHED ❤️</h2>
+<img src="assets/especial.jpg" class="photo-final">
+<div class="final-letter">
+<p>Viduxinho,</p>
+<p>The beach. My birthday. The first I love you. Our first car. The proposal. Our home.</p>
+<p>The most important part was always you.</p>
+<p>Forever your Player 1 ❤️<br><br>Lara</p>
+</div>
+<div class="achievement">🏆 LOVE QUEST COMPLETED 100%</div>
+</section>
+
+<script>
+function nextScreen(id){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById('screen'+id).classList.add('active');
+window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
