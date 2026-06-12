@@ -1,146 +1,149 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Quest ❤️</title>
+<title>Love Quest Premium</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:'Press Start 2P',cursive;
 background:linear-gradient(180deg,#050816,#0b1020,#1c1240);
-color:white;
-line-height:1.8;
+color:#fff;
+overflow:hidden;
 }
 .stars{
-position:fixed;inset:0;
+position:fixed;inset:0;z-index:-1;
 background-image:radial-gradient(white 1px,transparent 1px);
 background-size:40px 40px;
-opacity:.2;
-z-index:-1;
+opacity:.25;
 }
-.hero,.chapter,.final{
-max-width:900px;
-margin:auto;
-padding:80px 20px;
-text-align:center;
+.screen{display:none;height:100vh;padding:30px;overflow-y:auto;text-align:center}
+.screen.active{display:flex;flex-direction:column;justify-content:center;align-items:center}
+h1{font-size:3rem;color:#ff7cf7;margin-bottom:25px;text-shadow:0 0 20px #ff7cf7}
+h2{color:#ffe27a;margin-bottom:20px}
+p{max-width:800px;line-height:2;margin:20px auto}
+.btn{
+background:linear-gradient(45deg,#ff6bff,#ff94f3);
+border:none;color:#fff;padding:18px 35px;border-radius:12px;
+font-family:'Press Start 2P',cursive;cursor:pointer;
+box-shadow:0 0 20px #ff6bff;
 }
-h1{
-font-size:3rem;
-color:#ff7cf7;
-margin-bottom:25px;
+.photo,.photo-main{
+width:100%;max-width:650px;height:auto;border-radius:20px;
+margin:20px auto;display:block;
+box-shadow:0 0 25px rgba(255,105,180,.35);
 }
-h2{
-color:#ffe27a;
-margin-bottom:25px;
-}
-.card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.15);
-border-radius:20px;
-padding:25px;
-margin-top:20px;
-}
-.photo{
-width:100%;
-max-width:700px;
-border-radius:20px;
-display:block;
-margin:25px auto;
-box-shadow:0 0 25px rgba(255,105,180,.3);
-}
-p{margin:20px auto;max-width:700px}
-.music{
-display:inline-block;
-padding:16px 24px;
-border:2px solid #ff7cf7;
-border-radius:12px;
-color:white;
-text-decoration:none;
-margin-top:20px;
-}
-.music:hover{background:#ff7cf7}
+.gallery{display:flex;flex-direction:column;align-items:center;gap:20px}
 .achievement{
-margin-top:20px;
-padding:15px;
-border:2px solid gold;
-color:gold;
+margin-top:20px;padding:15px;border:2px solid gold;color:gold;
 }
-@media(max-width:768px){
-h1{font-size:2rem}
-body{font-size:12px}
+.music-btn{
+display:inline-block;margin-top:20px;padding:15px 25px;
+border:2px solid #ff7cf7;color:#fff;text-decoration:none;border-radius:10px;
 }
+.final-letter{max-width:850px;text-align:left}
 </style>
 </head>
 <body>
 <div class="stars"></div>
 
-<section class="hero">
+<section class="screen active" id="screen0">
 <h1>LOVE QUEST ❤️</h1>
-<div class="card">
-<p>Player 1: Lara ❤️</p>
-<p>Player 2: Keven 🎮</p>
-<p>Save File Active Since 23/10/2022</p>
-</div>
+<p>Player 1: Lara ❤️<br><br>Player 2: Keven 🎮<br><br>Campaign Started: 23/10/2022</p>
+<button class="btn" onclick="nextScreen(1)">PRESS START</button>
 </section>
 
-<section class="chapter">
-<h2>🏖️ CHAPTER 1 - COMO TUDO COMEÇOU</h2>
+<section class="screen" id="screen1">
+<h2>CHAPTER 1</h2>
+<h2>🏖️ The Beginning</h2>
+<div class="gallery">
 <img src="assets/praia1.jpg" class="photo">
-<p>Tudo começou com uma simples fase. Mas sem perceber, dois jogadores estavam iniciando a maior aventura de suas vidas.</p>
+<img src="assets/praia2.jpg" class="photo">
+</div>
+<p>Two paths crossed without knowing how much they would change each other. What seemed like a simple conversation became the greatest adventure of our lives.</p>
+<button class="btn" onclick="nextScreen(2)">CONTINUE QUEST →</button>
 </section>
 
-<section class="chapter">
-<h2>🌹 CHAPTER 2 - PEQUENOS GESTOS</h2>
-<img src="assets/flores.jpg" class="photo">
-<p>Nem sempre são os grandes acontecimentos que ficam para sempre na memória. Às vezes, são os pequenos gestos que fazem a gente se sentir amado.</p>
+<section class="screen" id="screen2">
+<h2>CHAPTER 2</h2>
+<h2>🎂 A Birthday I'll Never Forget</h2>
+<img src="assets/aniversario.jpg" class="photo-main">
+<p>For a long time, my birthday was just another day. You transformed it into one of the happiest memories of my life. For the first time, I felt truly special.</p>
+<button class="btn" onclick="nextScreen(3)">CONTINUE QUEST →</button>
 </section>
 
-<section class="chapter">
-<h2>🚗 CHAPTER 3 - NOSSAS AVENTURAS</h2>
+<section class="screen" id="screen3">
+<h2>CHAPTER 3</h2>
+<h2>❤️ First "I Love You"</h2>
+<video class="photo-main" controls>
+<source src="assets/eu-te-amo.mp4" type="video/mp4">
+</video>
+<p>Some moments only last a few seconds, but stay forever. That was one of them.</p>
+<button class="btn" onclick="nextScreen(4)">CONTINUE QUEST →</button>
+</section>
+
+<section class="screen" id="screen4">
+<h2>CHAPTER 4</h2>
+<h2>🚗 First Achievement Unlocked</h2>
+<div class="gallery">
 <img src="assets/carro1.jpg" class="photo">
-<p>O destino nunca foi o mais importante. As melhores memórias aconteceram durante o caminho. E todas elas tinham algo em comum: você.</p>
+<img src="assets/carro2.jpg" class="photo">
+</div>
+<p>Our first car was more than a car. It was proof that together we could build dreams that once felt impossible.</p>
+<div class="achievement">🏆 ACHIEVEMENT UNLOCKED<br><br>FIRST BIG DREAM</div>
+<button class="btn" onclick="nextScreen(5)">CONTINUE QUEST →</button>
 </section>
 
-<section class="chapter">
-<h2>💍 CHAPTER 4 - ENGAGEMENT ARC</h2>
-<img src="assets/noivado1.jpg" class="photo">
-<p>Naquele dia, a aventura ganhou um novo objetivo. Não apenas caminhar lado a lado, mas escolher um ao outro todos os dias.</p>
-<div class="achievement">🏆 LEGENDARY ACHIEVEMENT UNLOCKED</div>
+<section class="screen" id="screen5">
+<h2>CHAPTER 5</h2>
+<h2>💍 God's Promise</h2>
+<img src="assets/noivado1.jpg" class="photo-main">
+<p>More than a proposal. More than a ring. It was the confirmation that God was writing a story greater than we could ever imagine.</p>
+<div class="achievement">🏆 LEGENDARY ACHIEVEMENT<br><br>FOREVER STARTS HERE</div>
+<button class="btn" onclick="nextScreen(6)">CONTINUE QUEST →</button>
 </section>
 
-<section class="chapter">
-<h2>🏠 CHAPTER 5 - HOME DLC</h2>
-<img src="assets/casa1.jpg" class="photo">
-<p>Depois de tantos sonhos compartilhados, chegou o momento de construir um lar. Não apenas uma casa. O nosso lar.</p>
+<section class="screen" id="screen6">
+<h2>CHAPTER 6</h2>
+<h2>🏠 Home DLC</h2>
+<img src="assets/casa1.jpg" class="photo-main">
+<div class="gallery">
+<img src="assets/natal1.jpg" class="photo">
+<img src="assets/natal2.jpg" class="photo">
+</div>
+<p>You didn't just give me a house. You gave me a home. A safe place. A place where dreams, movie nights and Christmas memories became real.</p>
+<button class="btn" onclick="nextScreen(7)">CONTINUE QUEST →</button>
 </section>
 
-<section class="final">
-<h2>❤️ THE GREATEST ADVENTURE</h2>
-<img src="assets/especial.jpg" class="photo">
-
-<div class="card" style="text-align:left">
+<section class="screen" id="screen7">
+<h2>FINAL CHAPTER</h2>
+<h2>❤️ The Greatest Adventure</h2>
+<img src="assets/especial.jpg" class="photo-main">
+<div class="final-letter">
 <p>Keven,</p>
-<p>Se alguém me contasse lá atrás tudo o que viveríamos juntos, eu provavelmente acharia impossível.</p>
-<p>A praia, as flores, as viagens, o noivado, a nossa casa e todos os momentos que não cabem em fotografias.</p>
-<p>Você se tornou meu lugar seguro, meu melhor amigo, meu companheiro de aventuras e a pessoa com quem eu quero continuar jogando todos os dias.</p>
-<p>Se essa história fosse um jogo, você seria a escolha que eu faria em todas as vidas.</p>
-<p>E se existe uma conquista que valeu a pena desbloquear, foi você.</p>
-<p>Com amor,<br><br>Lara ❤️</p>
+<p>If someone had told me years ago everything we would live together, I probably wouldn't have believed it.</p>
+<p>The beach. My birthday. The first “I love you”. Our first car. The proposal. Our home. The Christmas memories.</p>
+<p>Looking back, I realize the most important part was never the places or achievements.</p>
+<p>It was you.</p>
+<p>You showed me what it feels like to be loved. You gave me safety when I needed it, strength when I doubted myself, and a home when all I wanted was a place to belong.</p>
+<p>You didn't just change my life. You changed the way I see myself.</p>
+<p>And if there is one achievement worth unlocking, it was you.</p>
+<p>With love,<br><br>Lara ❤️</p>
 </div>
-
-<div class="achievement">
-🏆 LOVE QUEST COMPLETED<br><br>100%
-</div>
-
-<a class="music" target="_blank" href="https://open.spotify.com/playlist/4tknwR7cm35PUHX3ZeMJ3Y?si=394dc6d95e4d42b1&pt=43f70aa4e5658095d3bc70d20faee120">
-🎵 Nossa Trilha Sonora
-</a>
-
-<div class="achievement" style="margin-top:30px">
-NEXT MISSION:<br><br>CASAMENTO ❤️
-</div>
+<div class="achievement">🏆 LOVE QUEST COMPLETED<br><br>100%</div>
+<a class="music-btn" target="_blank" href="https://open.spotify.com/playlist/4tknwR7cm35PUHX3ZeMJ3Y?si=394dc6d95e4d42b1&pt=43f70aa4e5658095d3bc70d20faee120">🎵 Our Soundtrack</a>
+<br><br>
+<div class="achievement">✨ NEXT MISSION<br><br>MARRIED LIFE ❤️</div>
 </section>
+
+<script>
+function nextScreen(id){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById('screen'+id).classList.add('active');
+window.scrollTo(0,0);
+}
+</script>
 </body>
 </html>
